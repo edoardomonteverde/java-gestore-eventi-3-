@@ -9,7 +9,7 @@
 
 * Quando si istanzia un nuovo evento questi [attributi] devono essere tutti valorizzati nel [costruttore],
 
-tranne ( posti prenotati ) che va inizializzato a 0.
+  tranne ( posti prenotati ) che va inizializzato a 0.
 
 * Inserire il controllo che la data non sia già passata e che il numero di posti totali sia positivo. 
 
@@ -23,13 +23,13 @@ tranne ( posti prenotati ) che va inizializzato a 0.
 
 * Vanno inoltre implementati dei metodi public che svolgono le seguenti funzioni:
 
-prenota: aggiunge uno ai posti prenotati. Se l’evento è già passato o non ha posti disponibili deve restituire un’eccezione.
+ - prenota: aggiunge uno ai posti prenotati. Se l’evento è già passato o non ha posti disponibili deve restituire un’eccezione.
 
-disdici: riduce di uno i posti prenotati. Se l’evento è già passato o non ci sono prenotazioni restituisce un’eccezione.
+ - disdici: riduce di uno i posti prenotati. Se l’evento è già passato o non ci sono prenotazioni restituisce un’eccezione.
 
-l’override del metodo toString() in modo che venga restituita una stringa contenente: data formattata - titolo
+ - l’override del metodo toString() in modo che venga restituita una stringa contenente: data formattata - titolo
 
-Aggiungete eventuali metodi (public e private) che vi aiutino a svolgere le funzioni richieste.
+* Aggiungete eventuali metodi (public e private) che vi aiutino a svolgere le funzioni richieste.
 
 */
 
@@ -83,6 +83,11 @@ public class Evento {
         return data;
     }
 
+    public String getDataFormattata() {
+        DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        return data.format(dateFormatter);
+    }
+
     public void setData (LocalDate data) {
         if (data.isBefore(LocalDate.now())) {
             throw new IllegalArgumentException (" La data dell' evento non può essere nel passato");
@@ -121,11 +126,9 @@ public class Evento {
     }
 
     @Override
-    public String toString() {
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-        return data.format(formatter) + " - " + titolo;
-    }
-
+public String toString() {
+    return titolo + " - " + getDataFormattata();
+}
 
     
 

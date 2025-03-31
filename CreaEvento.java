@@ -1,4 +1,5 @@
 import java.time.LocalDate;
+import java.time.LocalTime;
 import java.time.format.DateTimeParseException;
 import java.util.Scanner;
 
@@ -174,6 +175,18 @@ public class CreaEvento {
             System.out.println("Posti disponibili: " + (evento.getPostiTotali() - evento.getPostiPrenotati()));
 
             System.out.println("Grazie per aver usato il sistema di gestione eventi!");
+             Concerto concerto = new Concerto(
+            "Concerto Rock",
+            LocalDate.of(2025, 7, 10),
+            LocalTime.of(20, 0),        
+            300,                        
+            35.50                       
+        );
+
+        // Stampa delle informazioni del concerto
+        System.out.println("Concerto creato con successo!");
+        System.out.println(concerto.toString());
+     
         } catch (Exception e) {
             System.out.println("Si è verificato un errore imprevisto: " + e.getMessage());
         } finally {
