@@ -1,17 +1,21 @@
 
 /* Creare una [classe Concerto] che [estende Evento],
 *  che ha anche gli [attributi] :
-* - ora (LocalTime)
-* - prezzo (double)
+ - ora (LocalTime)
+ - prezzo (double)
 
 * Aggiungere questi attributi nel [costruttore] e implementarne getter e setter.
 
 * Aggiungere i [metodi] per restituire:
-* - data e ora formattata
-* - e prezzo formattato (##,##€) 
+ - data e ora formattata
+ - e prezzo formattato (##,##€) 
 
 * Fare l’ override del metodo toString() in modo che venga restituita una stringa del tipo:
-* data e ora formattata - titolo - prezzo formattato
+- data
+- ora formattata
+- titolo 
+- prezzo formattato
+
  */
 
 import java.text.DecimalFormat;
